@@ -360,3 +360,37 @@ Current focus:
 Next:
 
 **Study features → Documents → Embeddings → RAG**
+
+## Day 2 — Prompt Engineering & AI Features
+
+### What I learned
+
+- Prompt engineering
+- System instructions
+- User prompts
+- Conversation context
+- API error handling
+- HTTP/API errors such as 503 and 429
+
+### What I built
+
+StudyMate AI now supports:
+
+- Normal conversation
+- `/explain <topic>`
+- `/quiz <topic>`
+- Quiz evaluation through conversation context
+- Basic API error handling
+
+### Example
+
+```text
+You: /quiz load balancing
+
+StudyMate AI:
+5-question quiz...
+
+You: 1-B, 2-A, 3-C, 4-B, 5-C
+
+StudyMate AI:
+5/5 🎉
