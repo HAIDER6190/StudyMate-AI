@@ -351,15 +351,38 @@ The goal is to understand not only **what Generative AI can do**, but also **how
 
 # 📌 Project Status
 
-**Day 1 completed ✅**
+**Day 1 completed ✅**  
+**Day 2 completed ✅**
 
 Current focus:
 
-**Generative AI → LLM APIs → Prompting → Conversation Context**
+**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features**
 
 Next:
 
-**Study features → Documents → Embeddings → RAG**
+**Documents → Embeddings → RAG**
+
+---
+
+## Day 1 — LLM & Gemini API
+
+### What I learned
+
+- What Generative AI is
+- What an LLM is
+- How LLM APIs work
+- Gemini API basics
+- System instructions
+- Conversation context
+
+### What I built
+
+- Connected StudyMate AI to Gemini
+- Created a conversational AI tutor
+- Added continuous conversation
+- Added basic tutor behavior
+
+---
 
 ## Day 2 — Prompt Engineering & AI Features
 
