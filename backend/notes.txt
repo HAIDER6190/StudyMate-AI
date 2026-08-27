@@ -1,0 +1,16 @@
+Machine Learning
+
+Machine learning is a field of artificial intelligence where computers
+learn patterns from data.
+
+Supervised learning uses labeled data. The model receives inputs and
+known outputs and learns the relationship between them.
+
+Unsupervised learning works with unlabeled data. The goal is to discover
+patterns or groups within the data.
+
+Classification is a supervised learning task where the model predicts
+a category.
+
+Regression is a supervised learning task where the model predicts a
+continuous numerical value.
