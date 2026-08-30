@@ -352,68 +352,17 @@ The goal is to understand not only **what Generative AI can do**, but also **how
 # 📌 Project Status
 
 **Day 1 completed ✅**  
-**Day 2 completed ✅**
+**Day 2 completed ✅**  
+**Day 3 completed ✅**
 
 Current focus:
 
-**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features**
+**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features → Documents → Chunking**
 
 Next:
 
-**Documents → Embeddings → RAG**
+**Embeddings → Semantic Search → RAG**
 
 ---
 
-## Day 1 — LLM & Gemini API
 
-### What I learned
-
-- What Generative AI is
-- What an LLM is
-- How LLM APIs work
-- Gemini API basics
-- System instructions
-- Conversation context
-
-### What I built
-
-- Connected StudyMate AI to Gemini
-- Created a conversational AI tutor
-- Added continuous conversation
-- Added basic tutor behavior
-
----
-
-## Day 2 — Prompt Engineering & AI Features
-
-### What I learned
-
-- Prompt engineering
-- System instructions
-- User prompts
-- Conversation context
-- API error handling
-- HTTP/API errors such as 503 and 429
-
-### What I built
-
-StudyMate AI now supports:
-
-- Normal conversation
-- `/explain <topic>`
-- `/quiz <topic>`
-- Quiz evaluation through conversation context
-- Basic API error handling
-
-### Example
-
-```text
-You: /quiz load balancing
-
-StudyMate AI:
-5-question quiz...
-
-You: 1-B, 2-A, 3-C, 4-B, 5-C
-
-StudyMate AI:
-5/5 🎉
