@@ -1,16 +1,582 @@
+# Machine Learning Study Notes
+
+## 1. Introduction to Machine Learning
+
+Machine learning is a branch of artificial intelligence that allows computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every situation.
+
+Traditional programming usually follows the pattern:
+
+Input + Rules → Output
+
+In machine learning, the process is different:
+
+Input Data + Expected Output → Learning Algorithm → Model
+
+The trained model can then be used to make predictions on new data.
+
+Machine learning is used in many real-world applications, including recommendation systems, fraud detection, medical diagnosis, image recognition, speech recognition, search engines, and autonomous systems.
+
+A machine learning system normally starts with data. The quality and quantity of the data can strongly affect the performance of the model. The data is processed, cleaned, and prepared before being given to a machine learning algorithm.
+
+A model is a mathematical representation that learns relationships and patterns from data. During training, the model adjusts its internal parameters to reduce errors.
+
+Machine learning can generally be divided into supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning.
+
+---
+
+## 2. Supervised Learning
+
+Supervised learning is a type of machine learning where the model learns from labeled data.
+
+Labeled data means that each training example contains both an input and a known correct output.
+
+For example, suppose we want to predict whether an email is spam.
+
+Input:
+Email text
+
+Output:
+Spam or Not Spam
+
+The model learns the relationship between the input and the output during training.
+
+Supervised learning has two major tasks:
+
+1. Classification
+2. Regression
+
+Classification is used when the output is a category or class.
+
+Examples of classification include:
+
+* Spam or not spam
+* Cat or dog
+* Fraud or legitimate transaction
+* Disease or no disease
+* Pass or fail
+
+Regression is used when the output is a continuous numerical value.
+
+Examples of regression include:
+
+* Predicting house prices
+* Predicting temperature
+* Predicting sales
+* Predicting someone's salary
+* Predicting electricity consumption
+
+The main difference is that classification predicts categories, while regression predicts numerical values.
+
+---
+
+## 3. Unsupervised Learning
+
+Unsupervised learning works with unlabeled data.
+
+In this type of learning, the model does not receive the correct answers during training. Instead, it tries to discover patterns, structures, or groups within the data.
+
+One common unsupervised learning technique is clustering.
+
+Clustering groups similar data points together.
+
+For example, an online store might have customer information such as purchase history, spending amount, and product preferences.
+
+A clustering algorithm might discover groups such as:
+
+* Customers who frequently purchase electronics
+* Customers who mostly purchase clothing
+* Customers who spend a lot of money
+* Customers who make occasional purchases
+
+The algorithm discovers these groups without being explicitly told what the groups should be.
+
+Another important unsupervised learning technique is dimensionality reduction. Dimensionality reduction attempts to reduce the number of features while preserving important information.
+
+Unsupervised learning is useful when labeled data is unavailable or when we want to explore a dataset and discover hidden patterns.
+
+---
+
+## 4. Classification
+
+Classification is a supervised learning problem where the goal is to predict a category.
+
+For example, a model might classify a message as:
+
+Spam
+or
+Not Spam
+
+Classification can involve two classes or many classes.
+
+Binary classification involves two possible classes.
+
+Examples:
+
+* Yes / No
+* Fraud / Not Fraud
+* Sick / Healthy
+* Spam / Not Spam
+
+Multiclass classification involves more than two classes.
+
+For example, an image recognition model might classify an image as:
+
+* Cat
+* Dog
+* Horse
+* Bird
+* Car
+
+Some common classification algorithms include logistic regression, decision trees, random forests, support vector machines, and neural networks.
+
+The choice of algorithm depends on the dataset, problem requirements, computational resources, and desired performance.
+
+---
+
+## 5. Regression
+
+Regression is a supervised learning task where the model predicts a continuous numerical value.
+
+For example, a real estate company could use regression to predict the price of a house.
+
+The input features might include:
+
+* Number of bedrooms
+* House size
+* Location
+* Age of the building
+* Number of bathrooms
+
+The output could be:
+
+Predicted price = $250,000
+
+Another example is predicting monthly sales.
+
+Input features could include advertising budget, number of customers, season, and previous sales.
+
+The output might be:
+
+Predicted monthly sales = 12,500 units
+
+Linear regression is one of the simplest and most commonly introduced regression algorithms. It attempts to model the relationship between input variables and a continuous output.
+
+---
+
+## 6. Training, Validation, and Testing
+
+A machine learning model should not simply be trained and evaluated on exactly the same data.
+
+A dataset is commonly divided into training, validation, and test sets.
+
+The training set is used to train the model.
+
+The validation set can be used during development to compare models, tune parameters, and make decisions about the model configuration.
+
+The test set is used to evaluate the final model on data that was not used during training.
+
+A common split might be:
+
+* 70% training data
+* 15% validation data
+* 15% testing data
+
+The exact percentages can vary depending on the size and characteristics of the dataset.
+
+The purpose of the test set is to estimate how well the model performs on unseen data.
+
+---
+
+## 7. Overfitting and Underfitting
+
+Overfitting occurs when a machine learning model learns the training data too closely, including noise and unusual patterns that do not generalize to new data.
+
+An overfitted model may have excellent performance on training data but poor performance on unseen data.
+
+For example:
+
+Training accuracy = 99%
+
+Test accuracy = 70%
+
+This can be a sign of overfitting.
+
+Underfitting occurs when a model is too simple to capture important patterns in the data.
+
+An underfitted model may perform poorly on both training and test data.
+
+The goal is to build a model that generalizes well.
+
+Some techniques that can help reduce overfitting include:
+
+* Using more training data
+* Regularization
+* Cross-validation
+* Reducing model complexity
+* Early stopping
+* Data augmentation in some applications
+
+---
+
+## 8. Features and Labels
+
+A feature is an input variable used by a machine learning model.
+
+For example, when predicting house prices, features could include:
+
+* House size
+* Number of bedrooms
+* Location
+* Building age
+
+The label is the target output that the model is trying to predict.
+
+For house price prediction:
+
+Features → House size, bedrooms, location
+
+Label → House price
+
+In supervised learning, training data usually contains both features and labels.
+
+Good feature selection can improve model performance and reduce unnecessary complexity.
+
+---
+
+## 9. Data Preprocessing
+
+Real-world data is often messy and cannot immediately be used to train a machine learning model.
+
+Data preprocessing prepares raw data for machine learning.
+
+Common preprocessing tasks include:
+
+* Handling missing values
+* Removing duplicate records
+* Correcting incorrect data
+* Encoding categorical variables
+* Scaling numerical features
+* Detecting outliers
+
+For example, a dataset might contain a missing value for someone's age.
+
+Possible approaches include removing the record or filling the missing value using a statistical method such as the mean or median.
+
+Categorical variables may also need to be converted into numerical representations.
+
+For example:
+
+Color:
+
+Red
+Blue
+Green
+
+can be encoded into numerical features before being provided to certain machine learning algorithms.
+
+---
+
+## 10. Feature Scaling
+
+Feature scaling is a preprocessing technique used to put numerical features on comparable scales.
+
+Suppose a dataset contains:
+
+Age: 18–80
+
+Salary: 20,000–200,000
+
+The numerical ranges are very different.
+
+Some machine learning algorithms can be affected by these differences in scale.
+
+Two common scaling methods are normalization and standardization.
+
+Normalization often transforms values into a specific range, such as 0 to 1.
+
+Standardization transforms data based on its mean and standard deviation.
+
+Feature scaling is especially important for algorithms that rely on distances or gradient-based optimization.
+
+---
+
+## 11. Decision Trees
+
+A decision tree is a supervised learning algorithm that makes predictions by asking a sequence of questions about the input data.
+
+For example, a model predicting whether a student will pass could ask:
+
+Did the student attend more than 80% of classes?
+
+If yes:
+
+Did the student complete the assignments?
+
+If yes:
+
+Prediction → Pass
+
+Decision trees are useful because their decisions can be easier to understand than some other machine learning models.
+
+However, decision trees can overfit if they become too deep or complex.
+
+Techniques such as limiting tree depth and pruning can help control this problem.
+
+---
+
+## 12. Random Forest
+
+Random forest is an ensemble machine learning algorithm that combines many decision trees.
+
+Instead of relying on one decision tree, a random forest creates multiple trees and combines their predictions.
+
+For classification, the trees can vote for the predicted class.
+
+For regression, their predictions can be combined to produce a numerical result.
+
+Random forests are often useful because they can capture complex relationships and are generally more robust than a single decision tree.
+
+They can also reduce the risk of overfitting compared with an individual deep decision tree, although they are not completely immune to overfitting.
+
+---
+
+## 13. Neural Networks
+
+A neural network is a machine learning model inspired loosely by the structure of biological neural systems.
+
+A neural network contains layers of interconnected units commonly called neurons.
+
+A basic neural network can contain:
+
+Input Layer
+↓
+Hidden Layer
+↓
+Output Layer
+
+The input layer receives features.
+
+Hidden layers transform the information using learned weights and activation functions.
+
+The output layer produces the final prediction.
+
+Neural networks are widely used for tasks such as:
+
+* Image recognition
+* Speech recognition
+* Natural language processing
+* Recommendation systems
+* Time-series prediction
+
+Deep learning refers to neural networks with multiple layers.
+
+---
+
+## 14. Machine Learning Metrics
+
+Machine learning models need metrics to measure their performance.
+
+For classification, common metrics include:
+
+* Accuracy
+* Precision
+* Recall
+* F1 score
+
+Accuracy measures the percentage of predictions that are correct.
+
+Precision measures how many predicted positive examples are actually positive.
+
+Recall measures how many actual positive examples were successfully identified.
+
+The F1 score combines precision and recall into a single metric.
+
+For regression, common metrics include:
+
+* Mean Absolute Error (MAE)
+* Mean Squared Error (MSE)
+* Root Mean Squared Error (RMSE)
+* R-squared
+
+MAE measures the average absolute difference between predicted and actual values.
+
+MSE calculates the average squared difference between predictions and actual values.
+
+---
+
+## 15. Artificial Intelligence, Machine Learning, and Deep Learning
+
+Artificial intelligence is the broad field of creating systems that perform tasks associated with human intelligence.
+
+Machine learning is a subset of artificial intelligence.
+
+Deep learning is a subset of machine learning that uses neural networks with multiple layers.
+
+The relationship can be represented as:
+
+Artificial Intelligence
+↓
 Machine Learning
+↓
+Deep Learning
 
-Machine learning is a field of artificial intelligence where computers
-learn patterns from data.
+For example, an AI system may use machine learning to detect fraud.
 
-Supervised learning uses labeled data. The model receives inputs and
-known outputs and learns the relationship between them.
+A deep learning system may use neural networks to recognize objects in images.
 
-Unsupervised learning works with unlabeled data. The goal is to discover
-patterns or groups within the data.
+---
 
-Classification is a supervised learning task where the model predicts
-a category.
+## 16. Generative AI and Large Language Models
 
-Regression is a supervised learning task where the model predicts a
-continuous numerical value.
+Generative AI refers to artificial intelligence systems that can generate new content.
+
+Examples include:
+
+* Text
+* Images
+* Audio
+* Video
+* Code
+
+Large language models, commonly called LLMs, are machine learning models designed to work with language.
+
+LLMs learn patterns from large amounts of text data.
+
+They can perform tasks such as:
+
+* Answering questions
+* Summarizing documents
+* Translating text
+* Generating code
+* Explaining concepts
+* Writing content
+
+An LLM does not automatically know the private study notes of a particular student.
+
+This is one reason retrieval-augmented generation can be useful.
+
+---
+
+## 17. Retrieval-Augmented Generation
+
+Retrieval-Augmented Generation, or RAG, combines information retrieval with text generation.
+
+A basic RAG system has two major stages:
+
+Retrieval
+and
+Generation
+
+During retrieval, the system searches a knowledge source for relevant information.
+
+During generation, the retrieved information is provided to an LLM as context.
+
+A typical RAG pipeline looks like:
+
+Documents
+↓
+Chunking
+↓
+Embeddings
+↓
+Vector Storage
+↓
+User Question
+↓
+Question Embedding
+↓
+Similarity Search
+↓
+Relevant Chunks
+↓
+LLM
+↓
+Final Answer
+
+RAG is useful for question answering over private or specialized documents.
+
+Examples include:
+
+* University notes
+* Company documentation
+* Legal documents
+* Product manuals
+* Research papers
+* Internal knowledge bases
+
+The quality of retrieval is very important because the LLM can only use the retrieved information effectively if the relevant information is found.
+
+---
+
+## 18. Embeddings
+
+An embedding is a numerical representation of data, such as text.
+
+Text can be converted into a vector containing many numerical values.
+
+For example:
+
+"Regression predicts a numerical value"
+
+can be represented by an embedding vector.
+
+The exact numbers are not normally interpreted directly by humans.
+
+Instead, embeddings allow a computer system to compare the semantic relationships between pieces of information.
+
+In a RAG system, document chunks can be converted into embeddings and stored.
+
+When a user asks a question, the question is also converted into an embedding.
+
+The system can then compare the question embedding with document embeddings.
+
+---
+
+## 19. Cosine Similarity
+
+Cosine similarity is one method for measuring how similar two vectors are.
+
+It compares the direction of two vectors rather than simply comparing their individual values.
+
+In semantic search, a higher similarity score generally indicates that two embeddings are more semantically related.
+
+For example:
+
+Question:
+"What does regression predict?"
+
+Relevant chunk:
+"Regression predicts a continuous numerical value."
+
+These two pieces of text have related meanings, so their embeddings should have relatively high similarity.
+
+A question about neural networks should instead retrieve a chunk about neural networks rather than a chunk about house prices.
+
+---
+
+## 20. Vector Databases
+
+When a RAG system contains only a few chunks, embeddings can be stored in a normal Python list.
+
+However, real applications may contain thousands or millions of chunks.
+
+A vector database is designed to store and search vector embeddings efficiently.
+
+Examples of vector search technologies include:
+
+* FAISS
+* Chroma
+* Pinecone
+* Weaviate
+
+A vector database can store:
+
+Embedding
++
+Original text
++
+Metadata
+
+When a user asks a question, the question embedding is compared against stored embeddings and the most relevant results are retrieved.
+
+This makes vector databases an important part of many production RAG systems.
