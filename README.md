@@ -346,7 +346,6 @@ Every day I will add a new feature to StudyMate AI and document:
 * New GenAI concepts I discovered
 
 The goal is to understand not only **what Generative AI can do**, but also **how GenAI applications are built technically**.
----
 # 📌 Project Status
 
 **Day 1 completed ✅**
@@ -354,14 +353,14 @@ The goal is to understand not only **what Generative AI can do**, but also **how
 **Day 3 completed ✅**
 **Day 4 completed ✅**
 **Day 5 completed ✅**
+**Day 6 completed ✅**
 
 Current focus:
 
-**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features → Documents → Chunking → Embeddings → Semantic Search → RAG**
+**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features → Documents → Chunking → Embeddings → Semantic Search → RAG → FastAPI → Gemini Integration**
 
 Next:
 
-**Vector Database → Better Retrieval → AI Tools → Function Calling**
+**Vector Database → Persistent Embeddings → Better Retrieval → AI Tools → Function Calling**
 
----
 
