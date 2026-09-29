@@ -580,3 +580,5 @@ Metadata
 When a user asks a question, the question embedding is compared against stored embeddings and the most relevant results are retrieved.
 
 This makes vector databases an important part of many production RAG systems.
+
+StudyMate AI uses embeddings to find relevant study information.

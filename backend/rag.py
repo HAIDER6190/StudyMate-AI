@@ -1,5 +1,7 @@
 import os
 import math
+import pickle
+import hashlib
 from dotenv import load_dotenv
 from google import genai
 
@@ -15,6 +17,10 @@ client = genai.Client(
 
 with open("notes.txt", "r", encoding="utf-8") as f:
     notes = f.read()
+# creating hash fingerprint of the notes to check if they have changed
+notes_hash= hashlib.md5(
+    notes.encode("utf-8")
+).hexdigest()
 
 chunks = notes.split("\n\n")
 chunks = [chunk.strip() for chunk in chunks if chunk.strip()]
@@ -26,26 +32,86 @@ print("Number of chunks:", len(chunks))
 
 
 # -----------------------------
-# Create embeddings
-# -----------------------------
+# Load or create embeddings
+EMBEDDINGS_FILE= "embeddings.pkl"
 
-embeddings = []
+if os.path.exists(EMBEDDINGS_FILE):
 
-for chunk in chunks:
+    print("Loading saved embeddings...")
 
-    result = client.models.embed_content(
-        model="gemini-embedding-001",
-        contents=chunk
-    )
+    with open(EMBEDDINGS_FILE, "rb") as f:
+        saved_data = pickle.load(f)
 
-    embeddings.append(
-        result.embeddings[0].values
-    )
+    # Check whether the notes have changed
+    if saved_data["notes_hash"] == notes_hash:
+
+        print("Notes have not changed.")
+
+        chunks = saved_data["chunks"]
+        embeddings = saved_data["embeddings"]
+
+    else:
+
+        print("Notes have changed. Recreating embeddings...")
+
+        embeddings = []
+
+        for chunk in chunks:
+
+            result = client.models.embed_content(
+                model="gemini-embedding-001",
+                contents=chunk
+            )
+
+            embeddings.append(
+                result.embeddings[0].values
+            )
+
+        saved_data = {
+            "chunks": chunks,
+            "embeddings": embeddings,
+            "notes_hash": notes_hash
+        }
+
+        with open(EMBEDDINGS_FILE, "wb") as f:
+            pickle.dump(saved_data, f)
+
+        print("Embeddings updated.")
+
+else:
+
+    print("Creating embeddings...")
+
+    embeddings = []
+
+    for chunk in chunks:
+
+        result = client.models.embed_content(
+            model="gemini-embedding-001",
+            contents=chunk
+        )
+
+        embeddings.append(
+            result.embeddings[0].values
+        )
+
+    saved_data = {
+        "chunks": chunks,
+        "embeddings": embeddings,
+        "notes_hash": notes_hash
+    }
+
+    with open(EMBEDDINGS_FILE, "wb") as f:
+        pickle.dump(saved_data, f)
+
+    print("Embeddings saved to embeddings.pkl")
+
 
 print("Number of embeddings:", len(embeddings))
 
 
-# -----------------------------
+
+
 # Cosine similarity
 # -----------------------------
 
