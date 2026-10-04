@@ -354,10 +354,14 @@ The goal is to understand not only **what Generative AI can do**, but also **how
 **Day 4 completed ✅**
 **Day 5 completed ✅**
 **Day 6 completed ✅**
+**Day 7 completed ✅**
+**Day 8 completed ✅**
 
 Current focus:
 
-**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features → Documents → Chunking → Embeddings → Semantic Search → RAG → FastAPI → Gemini Integration**
+Current focus:
+
+**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features → Documents → Chunking → Embeddings → Semantic Search → RAG → FastAPI → Gemini Integration → Persistent Embeddings → FAISS → Vector Search → Persistent FAISS Index**
 
 Next:
 
