@@ -356,15 +356,16 @@ The goal is to understand not only **what Generative AI can do**, but also **how
 **Day 6 completed ✅**
 **Day 7 completed ✅**
 **Day 8 completed ✅**
+**Day 9 completed ✅**
+
+
 
 Current focus:
 
-Current focus:
-
-**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features → Documents → Chunking → Embeddings → Semantic Search → RAG → FastAPI → Gemini Integration → Persistent Embeddings → FAISS → Vector Search → Persistent FAISS Index**
+**Generative AI → LLM APIs → Prompting → Conversation Context → AI Features → Documents → Chunking → Embeddings → Semantic Search → RAG → FastAPI → Gemini Integration → Persistent Embeddings → FAISS → Vector Search → Persistent FAISS Index → Better Chunking → Better Retrieval**
 
 Next:
 
-**Vector Database → Persistent Embeddings → Better Retrieval → AI Tools → Function Calling**
+**AI Tools → Function Calling → Tool Integration → Advanced StudyMate Features**
 
 
